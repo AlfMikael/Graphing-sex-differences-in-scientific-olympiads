@@ -7,11 +7,15 @@ data and replace it with your own to graph another country.
 How to use:
 First, put your data in the following form, in a csv-file:
 
-<p>points,first_name</p>
-<p>value1,name1</p>
-<p>value2,name2</p>
-<p>value3,name3</p>
-<p>etc.</p>
+points,first_name
+
+value1,name1
+
+value2,name2
+
+value3,name3
+
+etc.
 
 Then name your files in the following way: [competition]_[year].csv. Then put all data files into the raw_data folder.
 Then, in the data.py change the METADATA dict so that it corresponds to the files your have put there. Then change
