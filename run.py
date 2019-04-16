@@ -10,9 +10,6 @@ import data
 import direct_graphs as dg
 
 
-
-
-
 # Add new names to dictionary
 add.add_names(print_output=False)
 

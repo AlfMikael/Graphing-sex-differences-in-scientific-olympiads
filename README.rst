@@ -20,3 +20,5 @@ provide a list of names for which the gender could not be identified. Copy-paste
 Then and place an "M" or "F" in front of them (for male and female). Go back to run.py and run "add.add_names." At this point
 you can uncomment every line and run the entire run.py script. This will have generated the finished csv files in /csv/ and the
 images in /graphics/.
+
+Credit to gender_guesser by lead-ratings: https://github.com/lead-ratings/gender-guesser.
