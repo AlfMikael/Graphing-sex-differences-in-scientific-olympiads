@@ -8,9 +8,13 @@ How to use:
 First, put your data in the following form, in a csv-file:
 
 points,first_name
+
 value1,name1
+
 value2,name2
+
 value3,name3
+-
 etc.
 
 Then name your files in the following way: [competition]_[year].csv. Then put all data files into the raw_data folder.
