@@ -1,9 +1,10 @@
 Scientific Olympiad Grapher
 
 The purpose of this code is to visualize sex differences within scientific olympiads, but could conceivably do so
-for any test that provides a first name and a point-score.
+for any test that provides a first name and a point-score. Data from the Norwegian Olympids are provided. Delete that
+data and replace it with your own to graph another country.
 
-How to use:7
+How to use:
 First, put your data in the following form, in a csv-file:
 
 points,first_name
