@@ -14,7 +14,8 @@ value1,name1
 value2,name2
 
 value3,name3
--
+
+
 etc.
 
 Then name your files in the following way: [competition]_[year].csv. Then put all data files into the raw_data folder.
