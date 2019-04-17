@@ -38,12 +38,13 @@ def add_names(print_output=False):
     for line in new_names_file.readlines():
         words = line.split()
         if len(words) != 3: raise ValueError(f'Wrong number of words on line: {line}')
+
         sex = words[0] #'M' or 'F'
         if (sex != "M") & (sex != "F"): raise ValueError(f'Wrong sex on line: {line}')
-        name = words[1]
 
         country = words[2]
         if country not in COUNTRIES.keys(): raise ValueError(f'Country not in lise in line: {line}')
+
         sex_and_name = words[0] + " " + words[1]
         spaces_before_1 = 64 - COUNTRIES.get(country) - len(sex_and_name)
         bit1 = " " * spaces_before_1 + "1"
