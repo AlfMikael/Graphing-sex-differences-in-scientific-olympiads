@@ -13,7 +13,7 @@ import direct_graphs as dg
 # Add new names to dictionary
 add.add_names(print_output=False)
 
-# Generate csv - files
+#Generate csv - files
 data.generate_csv(print_unknown_names=True)
 
 # Make cumulative graphs

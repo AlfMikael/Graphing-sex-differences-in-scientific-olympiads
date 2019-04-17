@@ -7,6 +7,16 @@ __email__ = "amikaelc@protonmail.com"
 dictionary provided by the author, along with additional name-gender pairs as needed.
 """
 
+COUNTRIES = {"great britain": 1, "ireland": 2, "u.s.a.": 3, "italy": 4, "malta": 5, "portugal": 6,
+             "spain": 7, "france": 8, "belgium": 9, "luxembourg": 10, "the netherlands": 100, "east frisia": 12, "germany": 13, "austria": 14,
+            "switzerland": 15, "iceland": 16, "denmark": 17, "norway": 18, "sweden": 19, "finland": 20, "estonia": 21, "latvia": 22,
+            "lithuania": 23, "poland": 24,"czech republic": 25,"slovakia": 26,"hungary": 27,"romania": 28,"bulgaria": 29,
+            "bosnia and gerzegovina": 30,"croatia": 31, "kosovo": 32,"macedonia": 33,"montenegro": 34,"serbia": 35,
+            "slovenia": 36,"albania": 37,"greece": 38,"russia": 39,"belarus": 40, "moldova": 41,"ukraine": 42, "armenia": 43,
+            "azerbaijan": 44, "georgia": 45,"kazakhstan": 46,"turkey": 47,"arabia": 48,"israel": 49,"china": 50,"india": 51,"japan": 52,
+            "korea": 53,"vietnam": 54,"other": 55
+            }
+
 
 def add_names(print_output=False):
 
@@ -17,7 +27,7 @@ def add_names(print_output=False):
     base_file = open("gender_guesser/data/base.txt", "r", encoding="utf-8")
     base_list = base_file.readlines()
 
-    new_lines_file = open("new_names.txt", "r", encoding="utf-8")
+    new_names_file = open("new_names.txt", "r", encoding="utf-8")
 
     new_dict_file = open("gender_guesser/data/nam_dict.txt", "w+", encoding="utf-8")
 
@@ -25,11 +35,20 @@ def add_names(print_output=False):
     # new_names are just the names.
     new_lines = []
     new_names = []
-    for line in new_lines_file.readlines():
-        line = line.strip()
-        bit1 = " " * (46 - len(line)) + "1"
-        bit2 = " " * 38 + "$\n"
-        new_lines.append(line + bit1 + bit2)
+    for line in new_names_file.readlines():
+        words = line.split()
+        if len(words) != 3: raise ValueError(f'Wrong number of words on line: {line}')
+        sex = words[0] #'M' or 'F'
+        if (sex != "M") & (sex != "F"): raise ValueError(f'Wrong sex on line: {line}')
+        name = words[1]
+
+        country = words[2]
+        if country not in COUNTRIES.keys(): raise ValueError(f'Country not in lise in line: {line}')
+        sex_and_name = words[0] + " " + words[1]
+        spaces_before_1 = 64 - COUNTRIES.get(country) - len(sex_and_name)
+        bit1 = " " * spaces_before_1 + "1"
+        bit2 = " " * (56 - COUNTRIES.get(country)) + "$\n"
+        new_lines.append(sex_and_name + bit1 + bit2)
         new_names.append(line.split()[1])
 
     # The new names will displace the old ones by the same name.
