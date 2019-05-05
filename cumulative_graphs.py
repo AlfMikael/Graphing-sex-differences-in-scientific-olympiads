@@ -14,7 +14,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 def mean_proportion(contest, year_list):
     my_df = pd.DataFrame()
 
@@ -29,10 +28,8 @@ def mean_proportion(contest, year_list):
         df1.index = pd.RangeIndex(len(df1.index))
         male_cum, female_cum = (0,0)
         for index, row in df1.iterrows():
-            if row[1] == "female":
-                female_cum += 1
-            if row[1] == "male":
-                male_cum += 1
+            if row[1] == "female": female_cum += 1
+            if row[1] == "male": male_cum += 1
             df1.iloc[index, 2] = male_cum
             df1.iloc[index, 3] = female_cum
 

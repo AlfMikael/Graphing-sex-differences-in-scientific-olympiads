@@ -65,7 +65,7 @@ def new_fig():
 def create_4_images():
     """ This function creates a 2x2 grid that displays the competitions next to each other.
     """
-    # common_years could be found programmatically.
+    # common_years could be found programmatic-ally.
     common_years = [2017, 2018]
     for year in common_years:
         fig = new_fig()

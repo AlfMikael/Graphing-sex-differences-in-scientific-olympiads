@@ -10,8 +10,7 @@ import data
 import direct_graphs as dg
 
 
-#Note: The code takes at least 10 seconds to run.
-
+#Note. The code may take some seconds to run.
 
 # Add new names to dictionary
 add.add_names(print_output=False)
